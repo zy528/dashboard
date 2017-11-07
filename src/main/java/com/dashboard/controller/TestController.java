@@ -23,7 +23,9 @@ public class TestController {
     public String findOneCity(Model model) {
 		
 		List<Map<String, String>> list = getdataservice.getTestData();
-		
+		for(int i=0; i<list.size(); i++) {
+			
+		}
 		model.addAttribute("list",list);
         return "Hellow";
     }
