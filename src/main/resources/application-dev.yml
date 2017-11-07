@@ -1,9 +1,0 @@
-#开发配置
-server:
-  port: 8080
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/d_easyhin_stat_ret?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: welcome123
-    driver-class-name: com.mysql.jdbc.Driver
