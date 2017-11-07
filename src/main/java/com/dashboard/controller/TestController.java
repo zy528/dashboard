@@ -24,7 +24,7 @@ public class TestController {
 		
 		List<Map<String, String>> list = getdataservice.getTestData();
 		for(int i=0; i<list.size(); i++) {
-			
+			list.get(i);
 		}
 		model.addAttribute("list",list);
         return "Hellow";
