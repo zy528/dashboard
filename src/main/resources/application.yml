@@ -1,0 +1,19 @@
+#默认使用配置
+spring:
+  profiles:
+      active: dev
+  thymeleaf:
+      cache: false
+      prefix: classpath:/webapp/pages/
+ #suffix: .html
+ #mode: HTML5
+ #encoding: UTF-8
+ #content-type: text/html
+
+
+#公共配置与profiles选择无关
+mybatis:
+  #实体类包
+  typeAliasesPackage: com.dashboard.domain
+  #mapper.xml所在位置
+  mapperLocations: classpath:mapper/*Mapper.xml
