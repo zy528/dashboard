@@ -13,7 +13,18 @@
     
 
     <select id="test" resultType="java.util.HashMap" >
-        SELECT f_user,f_page_type FROM t_views_growth_pvuv
+	SELECT
+	DATE_FORMAT(a.f_crt_time,'%Y-%m-%d') AS tjtime
+	,SUM(IF(a.f_page_type = 1,1,0)) AS grpv
+	,COUNT(DISTINCT IF(a.f_page_type = 1,a.f_user,NULL)) AS gruv
+	,SUM(IF(a.f_page_type IN(2,5),1,0)) AS bbxxpv
+	,COUNT(DISTINCT IF(a.f_page_type IN(2,5),a.f_user,NULL)) AS bbxxuv
+	,SUM(IF(a.f_page_type IN(3,6),1,0)) AS lrsjpv
+	,COUNT(DISTINCT IF(a.f_page_type IN(3,6),a.f_user,NULL)) AS lrsjuv
+	,SUM(IF(a.f_page_type = 4,1,0)) AS szqxpv
+	,COUNT(DISTINCT IF(a.f_page_type = 4,a.f_user,NULL)) AS szqxuv
+	FROM t_views_growth_pvuv a
+	GROUP BY DATE_FORMAT(a.f_crt_time,'%Y-%m-%d') 
     </select>
 
 </mapper>
